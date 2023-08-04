@@ -1,0 +1,28 @@
+grammar org.xtext.project.cw.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/project/cw/MyDsl"
+
+Model:
+	 (entities+=Entity | screens+=Screen)* 'start' 'at' startScreen=[Screen] ;
+	
+
+Attribute:
+ type=Type name=ID;
+ 
+Type:
+ 'String' | 'Boolean' | 'Int';
+ 
+
+ Screen:
+ 'screen' name=ID 'for' entity=[Entity] '{'
+ (triggers+=Trigger)*
+ '}';
+ 
+ Trigger:
+ 'on' 'button' trigger=ID 'move' 'to' screen=[Screen];
+ 
+ Entity:
+	'entity' name=ID '{'
+		(attributes+=Attribute)*
+	'}';
+	

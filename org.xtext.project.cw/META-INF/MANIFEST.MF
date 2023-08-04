@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.project.cw
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.project.cw
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.project.cw; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: org.xtext.project.cw.myDsl.util,
+ org.xtext.project.cw.serializer,
+ org.xtext.project.cw.parser.antlr,
+ org.xtext.project.cw.generator,
+ org.xtext.project.cw.myDsl,
+ org.xtext.project.cw.myDsl.impl,
+ org.xtext.project.cw.services,
+ org.xtext.project.cw.validation,
+ org.xtext.project.cw,
+ org.xtext.project.cw.scoping,
+ org.xtext.project.cw.parser.antlr.internal
+Import-Package: org.apache.log4j
